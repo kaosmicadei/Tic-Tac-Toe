@@ -6,10 +6,10 @@ TARGET = game
 .PHONY: app clean run
 
 run: app
-	./$(TARGET)
+	build/$(TARGET)
 
 app: $(OBJS)
-	$(CXX) -o $(TARGET) $^
+	$(CXX) -o build/$(TARGET) $^
 
 %.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) -o $@ $<
