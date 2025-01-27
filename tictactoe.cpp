@@ -32,12 +32,12 @@ void TicTacToe::printBoard() const {
 
 bool TicTacToe::makeMove(int cell) {
   std::uint16_t move = 1 << cell;
-  std::uint16_t& currentBoard = player1Turn ? player1Board : player2Board;
+  std::uint16_t& playerBoard = player1Turn ? player1Board : player2Board;
 
-  if ((board & move) != 0) return false;
+  if ((gameBoard & move) != 0) return false;
 
-  board |= move;
-  currentBoard |= move;
+  gameBoard |= move;
+  playerBoard |= move;
   player1Turn ^= true;
 
   return true;
@@ -62,7 +62,7 @@ void TicTacToe::updateGameState() {
     }
   }
 
-  if (board == 0b111111111) gameState = GameState::Draw;
+  if (gameBoard == 0b111111111) gameState = GameState::Draw;
 }
 
 

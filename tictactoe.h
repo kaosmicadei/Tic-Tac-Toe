@@ -11,7 +11,7 @@ enum class GameState {
 
 class TicTacToe {
 private:
-  std::uint16_t board;
+  std::uint16_t gameBoard;
   std::uint16_t player1Board;
   std::uint16_t player2Board;
   bool player1Turn;
@@ -19,7 +19,7 @@ private:
 
 public:
   TicTacToe() :
-    board(0),
+    gameBoard(0),
     player1Board(0),
     player2Board(0),
     player1Turn(true),
