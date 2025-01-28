@@ -17,6 +17,13 @@ private:
   bool player1Turn;
   GameState gameState;
 
+#ifdef TESTING
+public:
+#endif
+  bool makeMove(int cell);
+  void updateGameState();
+  void printBoard() const;
+
 public:
   TicTacToe() :
     gameBoard(0),
@@ -26,9 +33,4 @@ public:
     gameState(GameState::Ongoing) {}
 
   void loop();
-
-private:
-  bool makeMove(int cell);
-  void updateGameState();
-  void printBoard() const;
 };

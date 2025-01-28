@@ -1,7 +1,13 @@
-add_executable(TicTacToe
-    main.cpp
-    tictactoe.cpp
-)
+# Create a libary to be tested.
+add_library(tictactoe tictactoe.cpp)
 
-# To include headers
-target_include_directories(TicTacToe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# If the TESTING macro is defined setup the private methods a public to allow tests.
+if(TESTING)
+    target_compile_definitions(tictactoe PRIVATE TESTING)
+endif()
+
+# Create the excecutable.
+add_executable(main main.cpp)
+
+# Link the executable to the core library.
+target_link_libraries(main PRIVATE tictactoe)
