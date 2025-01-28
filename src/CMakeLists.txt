@@ -3,7 +3,5 @@ add_executable(TicTacToe
     tictactoe.cpp
 )
 
-# To include header
+# To include headers
 target_include_directories(TicTacToe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-# set_target_properties(TicTacToe PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
