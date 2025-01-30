@@ -33,4 +33,5 @@ public:
     gameState(GameState::Ongoing) {}
 
   void loop();
+  GameState getGameState() const { return gameState; }
 };
