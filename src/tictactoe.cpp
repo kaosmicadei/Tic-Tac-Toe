@@ -1,7 +1,6 @@
 #include <iostream>
 #include "tictactoe.h"
 
-
 void TicTacToe::printBoard() const {
 #ifdef _WIN32
   system("cls");
@@ -28,7 +27,6 @@ void TicTacToe::printBoard() const {
     cellmask <<= 1;
   }
 }
-
 
 bool TicTacToe::makeMove(int cell) {
   std::uint16_t move = 1 << cell;
@@ -65,25 +63,6 @@ void TicTacToe::updateGameState() {
   if (gameBoard == 0b111111111) gameState = GameState::Draw;
 }
 
-
-void announceResult(GameState state) {
-  switch (state) {
-  case GameState::Draw:
-    std::cout << "It's a draw!" << std::endl;
-    break;
-  case GameState::Player1Win:
-    std::cout << "Player 1 wins!" << std::endl;
-    break;
-  case GameState::Player2Win:
-    std::cout << "Player 2 wins!" << std::endl;
-    break;
-  default:
-    std::cout << "Sorry, something went wrong...";
-    break;
-  }
-}
-
-
 void TicTacToe::loop() {
   printBoard();
 
@@ -111,6 +90,4 @@ void TicTacToe::loop() {
     updateGameState();
     printBoard();
   }
-
-  announceResult(gameState);
 }
