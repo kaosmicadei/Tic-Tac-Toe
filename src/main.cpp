@@ -1,7 +1,6 @@
 #include "tictactoe.h"
 
-
 int main(void) {
-    TicTacToe game;
-    game.loop();
+  TicTacToe game;
+  game.loop();
 }
